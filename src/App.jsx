@@ -10,9 +10,6 @@ import {
   Phone,
   Mail,
   Menu,
-  BarChart3,
-  Gauge,
-  CalendarDays,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -134,8 +131,8 @@ function Hero() {
   );
 }
 
-function Problem() {
-  const items = [
+function ProblemAndSystem() {
+  const problems = [
     "You’re making decisions off today’s bank balance.",
     "You don’t know what cash looks like 2–4 weeks out.",
     "Receivables are drifting and nobody is chasing them hard enough.",
@@ -143,46 +140,6 @@ function Problem() {
     "One wrong cash decision can create a $50K–$200K problem.",
   ];
 
-  return (
-    <section className="bg-white px-5 py-20 md:px-8 md:py-28">
-      <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-            The problem
-          </p>
-          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-6xl">
-            Cash feels tight even when you’re busy.
-          </h2>
-          <p className="mt-6 text-xl leading-relaxed text-slate-700">
-            Revenue is not the same as control. If you can’t see what’s coming, every decision feels heavier than it should.
-          </p>
-        </motion.div>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-          className="rounded-2xl bg-slate-100 p-7 md:p-10"
-        >
-          {items.map((item) => (
-            <motion.div
-              key={item}
-              variants={fadeUp}
-              className="flex gap-4 border-b border-slate-200 py-5 last:border-b-0"
-            >
-              <AlertTriangle className="mt-1 h-6 w-6 flex-none text-[#F6A51A]" />
-              <p className="text-lg font-bold leading-snug text-[#0F2A44] md:text-xl">
-                {item}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-function System() {
   const steps = [
     {
       title: "See",
@@ -208,184 +165,68 @@ function System() {
   ];
 
   return (
-    <section id="system" className="bg-[#0F2A44] px-5 py-20 text-white md:px-8 md:py-28">
-      <div className="mx-auto max-w-7xl">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]">
-            The Cash Control System
+    <section id="system" className="bg-white px-5 py-18 md:px-8 md:py-24">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.4fr] lg:items-start">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+            The problem
           </p>
-          <h2 className="text-4xl font-black leading-tight tracking-tight md:text-6xl">
-            You don’t need more reports. <Highlight>You need a system.</Highlight>
+          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
+            Cash feels tight even when you’re busy.
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl text-xl leading-relaxed text-white/80">
-            A simple system we install and run with you every week.
+          <p className="mt-5 text-lg leading-relaxed text-slate-700">
+            Revenue is not the same as control. If you can’t see what’s coming, every decision feels heavier than it should.
           </p>
-        </div>
+          <div className="mt-8 divide-y divide-slate-200">
+            {problems.map((item) => (
+              <div key={item} className="flex gap-3 py-4">
+                <AlertTriangle className="mt-1 h-5 w-5 flex-none text-[#F6A51A]" />
+                <p className="text-base font-bold leading-snug text-[#0F2A44]">{item}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={stagger}
-          className="mt-16 grid gap-6 md:grid-cols-3"
-        >
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <motion.div
-                key={step.title}
-                variants={fadeUp}
-                className="relative overflow-hidden rounded-2xl bg-white p-8 text-[#0F2A44] shadow-2xl"
-              >
-                <div className="absolute right-6 top-6 text-8xl font-black text-slate-100">
-                  {index + 1}
-                </div>
-                <Icon className={`relative z-10 h-12 w-12 ${step.color}`} />
-                <h3 className={`relative z-10 mt-6 text-4xl font-black uppercase tracking-tight ${step.color}`}>
-                  {step.title}
-                </h3>
-                <p className="relative z-10 mt-3 text-lg font-bold">{step.subtitle}</p>
-                <ul className="relative z-10 mt-7 space-y-4">
-                  {step.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-3 text-base font-semibold text-slate-700">
-                      <CheckCircle2 className="mt-0.5 h-5 w-5 flex-none text-[#F6A51A]" />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            );
-          })}
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+            You don’t need more reports. You need a system.
+          </p>
+          <div className="grid gap-5 md:grid-cols-3">
+            {steps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <motion.div
+                  key={step.title}
+                  variants={fadeUp}
+                  className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 text-[#0F2A44] shadow-sm"
+                >
+                  <div className="absolute right-5 top-4 text-7xl font-black text-slate-100">
+                    {index + 1}
+                  </div>
+                  <Icon className={`relative z-10 h-9 w-9 ${step.color}`} />
+                  <h3 className={`relative z-10 mt-5 text-3xl font-black uppercase tracking-tight ${step.color}`}>
+                    {step.title}
+                  </h3>
+                  <p className="relative z-10 mt-2 text-sm font-black leading-snug">{step.subtitle}</p>
+                  <ul className="relative z-10 mt-5 space-y-3">
+                    {step.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-start gap-2 text-sm font-semibold text-slate-700">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-[#F6A51A]" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
+          </div>
         </motion.div>
       </div>
     </section>
   );
 }
 
-function TrustSection() {
-  return (
-    <section className="bg-white px-5 py-20 md:px-8 md:py-28">
-      <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-        <div>
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-            Built with you
-          </p>
-          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-6xl">
-            Built and run with you — not handed off.
-          </h2>
-          <p className="mt-6 text-xl leading-relaxed text-slate-700">
-            This isn’t a tool or a course. We work through your cash with you and install the system so it actually runs inside your business.
-          </p>
-        </div>
-        <div className="rounded-2xl bg-slate-100 p-8 shadow-sm">
-          <div className="aspect-[4/5] rounded-xl bg-[#0F2A44] p-8 text-white shadow-lg">
-            <div className="flex h-full flex-col justify-end">
-              <p className="text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]">Founder / Operator</p>
-              <h3 className="mt-3 text-3xl font-black">Heather Nickel</h3>
-              <p className="mt-4 text-lg leading-relaxed text-white/80">
-                Systems, cash clarity, and weekly execution for growing contractor businesses.
-              </p>
-            </div>
-          </div>
-          <p className="mt-4 text-sm text-slate-500">
-            Add your founder photo here when ready.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Outcomes() {
-  const outcomes = [
-    { icon: Eye, title: "Clear visibility", text: "See your cash with confidence." },
-    { icon: CheckCircle2, title: "Better decisions", text: "Know what you can afford and when." },
-    { icon: ShieldCheck, title: "Fewer surprises", text: "Catch issues before they become problems." },
-    { icon: DollarSign, title: "Stronger position", text: "More control. More freedom." },
-  ];
-
-  return (
-    <section id="outcomes" className="bg-white px-5 py-20 md:px-8 md:py-28">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-12 text-center">
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-            The outcome
-          </p>
-          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-6xl">
-            Know what you can afford. Decide with confidence.
-          </h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-4">
-          {outcomes.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
-              <Icon className="h-10 w-10 text-green-700" />
-              <h3 className="mt-5 text-xl font-black text-[#0F2A44]">{title}</h3>
-              <p className="mt-2 text-base leading-relaxed text-slate-600">{text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function BeforeAfter() {
-  const before = [
-    "Guessing what you can afford",
-    "Payroll stress",
-    "Late collections",
-    "Surprise shortages",
-    "No clear weekly decision rhythm",
-  ];
-  const after = [
-    "Know what you can spend",
-    "See tight weeks ahead",
-    "Clear A/R and A/P rules",
-    "Weekly cash decisions",
-    "Stronger cash position",
-  ];
-
-  return (
-    <section className="bg-slate-100 px-5 py-20 md:px-8 md:py-28">
-      <div className="mx-auto max-w-6xl text-center">
-        <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-6xl">
-          Before and after cash control.
-        </h2>
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl bg-white p-8 text-left">
-            <h3 className="text-3xl font-black text-[#0F2A44]">Before</h3>
-            <ul className="mt-6 space-y-5">
-              {before.map((item) => (
-                <li key={item} className="flex gap-3 text-lg font-bold text-slate-700">
-                  <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-slate-200 text-[#0F2A44]">
-                    ×
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-2xl bg-[#0F2A44] p-8 text-left text-white">
-            <h3 className="text-3xl font-black">After</h3>
-            <ul className="mt-6 space-y-5">
-              {after.map((item) => (
-                <li key={item} className="flex gap-3 text-lg font-bold text-white/90">
-                  <CheckCircle2 className="h-7 w-7 flex-none text-[#F6A51A]" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="mt-10">
-          <CTAButton />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Process() {
+function ProcessAndRules() {
   const phases = [
     { title: "Phase 1: See", weeks: "Weeks 1–2", text: "Understand your real cash position, burn rate, runway, and where cash is breaking." },
     { title: "Phase 2: Fix", weeks: "Weeks 3–4", text: "Build your 13-week forecast and put the cash control rules in place." },
@@ -393,31 +234,56 @@ function Process() {
     { title: "Phase 4: Optimize", weeks: "Weeks 9–13", text: "Improve collections, payment timing, job margins, and cash buffer." },
   ];
 
+  const rules = [
+    "Deposits on every job",
+    "Track job margins",
+    "No A/R past 60 days",
+    "Maintain cash buffer",
+    "No A/P past 60 days",
+    "Know your pipeline",
+  ];
+
   return (
-    <section id="process" className="bg-white px-5 py-20 md:px-8 md:py-28">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-[0.8fr_1.2fr] md:items-start">
-          <div>
-            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-              How it works
-            </p>
-            <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-6xl">
-              A 13-week install, then weekly control.
-            </h2>
-            <p className="mt-6 text-xl leading-relaxed text-slate-700">
-              This is not a report you forget about. It’s a working rhythm for decisions, cash timing, and action.
-            </p>
-          </div>
-          <div className="space-y-5">
-            {phases.map((phase) => (
-              <div key={phase.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-7">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <h3 className="text-2xl font-black text-[#0F2A44]">{phase.title}</h3>
-                  <span className="rounded-full bg-[#F6A51A]/20 px-4 py-2 text-sm font-black text-[#0F2A44]">
-                    {phase.weeks}
-                  </span>
-                </div>
-                <p className="mt-3 text-lg leading-relaxed text-slate-700">{phase.text}</p>
+    <section id="process" className="bg-[#0F2A44] px-5 py-20 text-white md:px-8 md:py-24">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr_1fr] lg:items-start">
+        <div>
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+            How it works
+          </p>
+          <h2 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">
+            A 13-week install, then weekly control.
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-white/80">
+            This is not a report you forget about. It’s a working rhythm for decisions, cash timing, and action.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {phases.map((phase) => (
+            <div key={phase.title} className="rounded-xl border border-white/15 bg-white/5 p-5">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <h3 className="text-xl font-black">{phase.title}</h3>
+                <span className="rounded-full bg-[#F6A51A]/90 px-3 py-1 text-xs font-black text-[#0F2A44]">
+                  {phase.weeks}
+                </span>
+              </div>
+              <p className="mt-2 text-sm leading-relaxed text-white/80">{phase.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]">
+            Implemented weekly
+          </p>
+          <h2 className="text-4xl font-black leading-tight tracking-tight">
+            Cash control rules that stop leaks.
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            {rules.map((rule) => (
+              <div key={rule} className="flex items-center gap-4 rounded-xl border border-white/15 bg-white/5 p-4">
+                <CheckCircle2 className="h-6 w-6 flex-none text-[#F6A51A]" />
+                <p className="text-base font-black">{rule}</p>
               </div>
             ))}
           </div>
@@ -427,41 +293,97 @@ function Process() {
   );
 }
 
-function Rules() {
-  const rules = [
-    "Deposits on every job",
-    "No A/R past 60 days",
-    "No A/P past 60 days",
-    "Track job margins",
-    "Maintain cash buffer",
-    "Know your pipeline",
+function OutcomesAndTrust() {
+  const outcomes = [
+    { icon: Eye, title: "Clear visibility", text: "See your cash with confidence." },
+    { icon: CheckCircle2, title: "Better decisions", text: "Know what you can afford and when." },
+    { icon: ShieldCheck, title: "Fewer surprises", text: "Catch issues before they become problems." },
+    { icon: DollarSign, title: "Stronger position", text: "More control. More freedom." },
+  ];
+
+  const before = [
+    "Guessing what you can afford",
+    "Payroll stress",
+    "Late collections",
+    "Surprise shortages",
+    "No clear weekly decision rhythm",
+  ];
+
+  const after = [
+    "Know what you can spend",
+    "See tight weeks ahead",
+    "Clear A/R and A/P rules",
+    "Weekly cash decisions",
+    "Stronger cash position",
   ];
 
   return (
-    <section className="bg-[#0F2A44] px-5 py-20 text-white md:px-8 md:py-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-10 text-center">
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]">
-            Implemented weekly
+    <section id="outcomes" className="bg-white px-5 py-20 md:px-8 md:py-24">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.25fr_0.8fr] lg:items-start">
+        <div>
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+            The outcome
           </p>
-          <h2 className="text-4xl font-black leading-tight tracking-tight md:text-6xl">
-            Cash control rules that stop leaks.
+          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
+            Know what you can afford. Decide with confidence.
           </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {outcomes.map(({ icon: Icon, title, text }) => (
+              <div key={title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                <Icon className="h-8 w-8 text-green-700" />
+                <h3 className="mt-4 text-base font-black text-[#0F2A44]">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{text}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {rules.map((rule) => (
-            <div key={rule} className="flex items-center gap-4 rounded-xl border border-white/15 bg-white/5 p-5">
-              <CheckCircle2 className="h-7 w-7 flex-none text-[#F6A51A]" />
-              <p className="text-lg font-black">{rule}</p>
+
+        <div>
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+            Before and after cash control
+          </p>
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="rounded-2xl bg-slate-100 p-6 text-left">
+              <h3 className="text-2xl font-black text-[#0F2A44]">Before</h3>
+              <ul className="mt-5 space-y-4">
+                {before.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm font-bold text-slate-700">
+                    <span className="flex h-5 w-5 flex-none items-center justify-center rounded-full bg-white text-[#0F2A44]">×</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
+            <div className="rounded-2xl bg-[#0F2A44] p-6 text-left text-white">
+              <h3 className="text-2xl font-black">After</h3>
+              <ul className="mt-5 space-y-4">
+                {after.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm font-bold text-white/90">
+                    <CheckCircle2 className="h-5 w-5 flex-none text-[#F6A51A]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 text-center">
+            <CTAButton />
+          </div>
+        </div>
+
+        <div className="rounded-2xl bg-slate-100 p-4 shadow-sm">
+          <img
+            src="/heather.jpg"
+            alt="Heather Nickel, founder and operator of Cash Control System"
+            className="aspect-[4/5] w-full rounded-xl object-cover object-top shadow-lg"
+          />
         </div>
       </div>
     </section>
   );
 }
 
-function FAQ() {
+function FAQAndCTA() {
   const faqs = [
     ["Is this bookkeeping?", "No. This sits above bookkeeping. We use your numbers to help you see cash, make decisions, and control timing."],
     ["Do I need perfect financials?", "No. We start with what you have, identify the gaps, and build from there."],
@@ -470,48 +392,31 @@ function FAQ() {
   ];
 
   return (
-    <section id="faq" className="bg-white px-5 py-20 md:px-8 md:py-28">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="text-center text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-6xl">
-          Everything else you need to know.
-        </h2>
-        <div className="mt-12 divide-y divide-slate-200">
-          {faqs.map(([q, a]) => (
-            <details key={q} className="group py-6">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-xl font-black text-[#0F2A44]">
-                {q}
-                <span className="text-3xl transition-transform group-open:rotate-45">+</span>
-              </summary>
-              <p className="mt-4 text-lg leading-relaxed text-slate-700">{a}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function FinalCTA() {
-  return (
-    <section id="book" className="relative overflow-hidden bg-[#0F2A44] px-5 py-20 text-center text-white md:px-8 md:py-28">
-      <div className="absolute inset-0 opacity-20">
-        <img
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=80"
-          alt="Construction site"
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <div className="absolute inset-0 bg-[#0F2A44]/80" />
-      <div className="relative mx-auto max-w-4xl">
-        <h2 className="text-4xl font-black leading-tight tracking-tight md:text-6xl">
-          If cash feels unclear, this fixes it.
-        </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-white/85">
-          Book a cash review and we’ll walk through where cash is getting stuck, what’s coming next, and whether the system makes sense for your business.
-        </p>
-        <div className="mt-10">
+    <section id="faq" className="bg-white">
+      <div id="book" className="bg-[#0F2A44] px-5 py-12 text-white md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+          <div>
+            <h2 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">
+              If cash feels unclear, this fixes it.
+            </h2>
+            <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
+              Book a cash review and we’ll walk through where cash is getting stuck, what’s coming next, and whether the system makes sense for your business.
+            </p>
+          </div>
           <CTAButton />
         </div>
+      </div>
+
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:grid-cols-2 md:px-8">
+        {faqs.map(([q, a]) => (
+          <details key={q} className="group border-b border-slate-200 pb-5">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-black text-[#0F2A44]">
+              {q}
+              <span className="text-2xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p className="mt-3 text-base leading-relaxed text-slate-700">{a}</p>
+          </details>
+        ))}
       </div>
     </section>
   );
@@ -519,7 +424,7 @@ function FinalCTA() {
 
 function Footer() {
   return (
-    <footer className="bg-[#081827] px-5 py-12 text-white md:px-8">
+    <footer className="bg-[#081827] px-5 py-10 text-white md:px-8">
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center">
         <div>
           <div className="text-2xl font-black uppercase tracking-tight">Cash Control System</div>
@@ -539,15 +444,10 @@ export default function App() {
     <main className="min-h-screen bg-white font-sans">
       <Header />
       <Hero />
-      <Problem />
-      <System />
-      <TrustSection />
-      <Outcomes />
-      <BeforeAfter />
-      <Process />
-      <Rules />
-      <FAQ />
-      <FinalCTA />
+      <ProblemAndSystem />
+      <ProcessAndRules />
+      <OutcomesAndTrust />
+      <FAQAndCTA />
       <Footer />
     </main>
   );

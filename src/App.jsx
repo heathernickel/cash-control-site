@@ -13,6 +13,9 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
+const CALENDLY_URL = "https://calendly.com/heather-theeightytwentygroup/30min";
+const CONTACT_EMAIL = "heather@theeightytwentygroup.com";
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 },
@@ -26,7 +29,9 @@ const stagger = {
 function CTAButton({ children = "Book a Cash Review", dark = false }) {
   return (
     <a
-      href="#book"
+      href={CALENDLY_URL}
+      target="_blank"
+      rel="noreferrer"
       className={`group inline-flex items-center justify-center gap-3 px-8 py-5 text-lg font-black tracking-tight transition-all md:px-10 ${
         dark
           ? "bg-white text-[#0F2A44] hover:bg-slate-100"
@@ -114,7 +119,7 @@ function Hero() {
           >
             <CTAButton />
             <p className="max-w-sm text-sm font-semibold text-white/80">
-              30 minutes. We’ll walk through your cash and show you what is happening.
+              15 minutes. We’ll walk through your cash and show you what is happening.
             </p>
           </motion.div>
           <motion.div
@@ -400,6 +405,12 @@ function FAQAndCTA() {
         </div>
       </div>
 
+      <div className="mx-auto max-w-7xl px-5 pt-16 text-center md:px-8">
+        <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
+          Everything else you need to know.
+        </h2>
+      </div>
+
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:grid-cols-2 md:px-8">
         {faqs.map(([q, a]) => (
           <details key={q} className="group border-b border-slate-200 pb-5">
@@ -424,8 +435,8 @@ function Footer() {
           <p className="mt-2 text-white/70">See your cash. Fix the leaks. Stay in control.</p>
         </div>
         <div className="flex flex-col gap-3 text-white/80 md:items-end">
-          <span className="inline-flex items-center gap-2"><Phone className="h-4 w-4" /> Book a Cash Review</span>
-          <span className="inline-flex items-center gap-2"><Mail className="h-4 w-4" /> hello@cashcontrolsystem.com</span>
+          <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-[#F6A51A]"><Phone className="h-4 w-4" /> Book a Cash Review</a>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 hover:text-[#F6A51A]"><Mail className="h-4 w-4" /> {CONTACT_EMAIL}</a>
         </div>
       </div>
     </footer>

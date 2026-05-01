@@ -284,7 +284,7 @@ function ProcessSection() {
   );
 }
 
-function OutcomesAndTrust() {
+function OutcomesSection() {
   const outcomes = [
     { icon: Eye, title: "Clear visibility", text: "See your cash with confidence." },
     { icon: CheckCircle2, title: "Better decisions", text: "Know what you can afford and when." },
@@ -334,47 +334,67 @@ function OutcomesAndTrust() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
-          <div>
-            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-              Before and after cash control
-            </p>
-            <div className="grid gap-5 md:grid-cols-2">
-              <div className="rounded-2xl bg-slate-100 p-6 text-left">
-                <h3 className="text-2xl font-black text-[#0F2A44]">Before</h3>
-                <ul className="mt-5 space-y-4">
-                  {before.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm font-bold text-slate-700">
-                      <span className="flex h-5 w-5 flex-none items-center justify-center rounded-full bg-white text-[#0F2A44]">×</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-2xl bg-[#0F2A44] p-6 text-left text-white">
-                <h3 className="text-2xl font-black">After</h3>
-                <ul className="mt-5 space-y-4">
-                  {after.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm font-bold text-white/90">
-                      <CheckCircle2 className="h-5 w-5 flex-none text-[#F6A51A]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        <div className="mt-14">
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+            Before and after cash control
+          </p>
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="rounded-2xl bg-slate-100 p-7 text-left">
+              <h3 className="text-2xl font-black text-[#0F2A44]">Before</h3>
+              <ul className="mt-5 space-y-4">
+                {before.map((item) => (
+                  <li key={item} className="flex gap-3 text-base font-bold text-slate-700">
+                    <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-white text-[#0F2A44]">×</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="mt-8">
-              <CTAButton />
+            <div className="rounded-2xl bg-[#0F2A44] p-7 text-left text-white">
+              <h3 className="text-2xl font-black">After</h3>
+              <ul className="mt-5 space-y-4">
+                {after.map((item) => (
+                  <li key={item} className="flex gap-3 text-base font-bold text-white/90">
+                    <CheckCircle2 className="h-6 w-6 flex-none text-[#F6A51A]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+          <div className="mt-8">
+            <CTAButton />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-          <div className="rounded-2xl bg-slate-100 p-4 shadow-sm">
-            <img
-              src="/heather.jpg"
-              alt="Heather Nickel, founder and operator of Cash Control System"
-              className="aspect-[4/5] w-full rounded-xl object-cover object-top shadow-lg"
-            />
-          </div>
+function FounderSection() {
+  return (
+    <section className="bg-slate-100 px-5 py-20 md:px-8 md:py-24">
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+        <div>
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+            Built with you
+          </p>
+          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
+            Built and run with you — not handed off.
+          </h2>
+          <p className="mt-6 text-xl leading-relaxed text-slate-700">
+            I don’t give you a report and leave you to figure it out. I work through your cash with you, install the rhythm, and help you make better decisions every week.
+          </p>
+          <p className="mt-5 text-lg font-bold leading-relaxed text-[#0F2A44]">
+            Heather Nickel, founder and operator of Cash Control System.
+          </p>
+        </div>
+        <div className="rounded-2xl bg-white p-4 shadow-sm">
+          <img
+            src="/heather.jpg"
+            alt="Heather Nickel, founder and operator of Cash Control System"
+            className="aspect-[4/5] w-full rounded-xl object-cover object-top shadow-lg"
+          />
         </div>
       </div>
     </section>
@@ -450,7 +470,8 @@ export default function App() {
       <Hero />
       <ProblemAndSystem />
       <ProcessSection />
-      <OutcomesAndTrust />
+      <OutcomesSection />
+      <FounderSection />
       <FAQAndCTA />
       <Footer />
     </main>

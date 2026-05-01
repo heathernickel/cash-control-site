@@ -62,8 +62,8 @@ function Header() {
         </a>
         <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-wide md:flex">
           <a href="#system" className="hover:text-[#F6A51A]">System</a>
-          <a href="#outcomes" className="hover:text-[#F6A51A]">Outcomes</a>
           <a href="#process" className="hover:text-[#F6A51A]">Process</a>
+          <a href="#outcomes" className="hover:text-[#F6A51A]">Outcomes</a>
           <a href="#faq" className="hover:text-[#F6A51A]">FAQ</a>
         </nav>
         <div className="hidden md:block">
@@ -106,7 +106,7 @@ function Hero() {
             variants={fadeUp}
             className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-white/90 md:text-2xl"
           >
-            We install a weekly cash control system so you know exactly how long your cash lasts, where it’s getting stuck, and what you can safely afford next.
+            We install a weekly cash control system so you know what is coming, where cash is getting stuck, and what you can safely afford next.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -114,16 +114,16 @@ function Hero() {
           >
             <CTAButton />
             <p className="max-w-sm text-sm font-semibold text-white/80">
-              We’ll walk through your cash and show you where it’s getting stuck.
+              30 minutes. We’ll walk through your cash and show you what is happening.
             </p>
           </motion.div>
           <motion.div
             variants={fadeUp}
             className="mt-12 flex flex-wrap justify-center gap-6 text-base font-bold text-white/90"
           >
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> See 13 weeks ahead</span>
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> Fix cash leaks</span>
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> Make decisions weekly</span>
+            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> See weeks ahead</span>
+            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> Find cash leaks</span>
+            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> Make better decisions</span>
           </motion.div>
         </motion.div>
       </div>
@@ -133,11 +133,11 @@ function Hero() {
 
 function ProblemAndSystem() {
   const problems = [
-    "You’re making decisions off today’s bank balance.",
-    "You don’t know what cash looks like 2–4 weeks out.",
-    "Receivables are drifting and nobody is chasing them hard enough.",
-    "You’re unsure if you can hire, spend, pay yourself, or take on the next job.",
-    "One wrong cash decision can create a $50K–$200K problem.",
+    "You are making decisions off today’s bank balance.",
+    "You do not know what cash looks like 2–4 weeks out.",
+    "Cash is getting stuck in timing gaps, collections, or job performance.",
+    "You are unsure if you can hire, spend, pay yourself, or take on the next job.",
+    "One bad cash decision can wipe out months of margin.",
   ];
 
   const steps = [
@@ -145,22 +145,22 @@ function ProblemAndSystem() {
       title: "See",
       color: "text-red-700",
       icon: Eye,
-      subtitle: "Know exactly how long your cash lasts.",
-      bullets: ["Burn rate snapshot", "Cash runway", "Cash trap analysis", "Slow-season pressure"],
+      subtitle: "Get the real picture of your cash.",
+      bullets: ["Cash position", "Runway", "Where cash is stuck"],
     },
     {
       title: "Fix",
       color: "text-[#C88800]",
       icon: ShieldCheck,
-      subtitle: "Build a plan you can actually use.",
-      bullets: ["13-week forecast", "Cash control rules", "Deposit discipline", "A/R and A/P cleanup"],
+      subtitle: "Build a working plan, not another report.",
+      bullets: ["13-week view", "Risk weeks", "Decision rhythm"],
     },
     {
       title: "Control",
       color: "text-green-700",
       icon: RefreshCw,
-      subtitle: "Run the system every week.",
-      bullets: ["Weekly cash meeting", "Actual vs forecast", "Decision-making rhythm", "Quarterly reset"],
+      subtitle: "Stay on top of cash every week.",
+      bullets: ["Weekly review", "Clear actions", "Quarterly reset"],
     },
   ];
 
@@ -226,26 +226,17 @@ function ProblemAndSystem() {
   );
 }
 
-function ProcessAndRules() {
+function ProcessSection() {
   const phases = [
-    { title: "Phase 1: See", weeks: "Weeks 1–2", text: "Understand your real cash position, burn rate, runway, and where cash is breaking." },
-    { title: "Phase 2: Fix", weeks: "Weeks 3–4", text: "Build your 13-week forecast and put the cash control rules in place." },
-    { title: "Phase 3: Control", weeks: "Weeks 5–8", text: "Run weekly cash meetings, compare actuals to forecast, and make decisions." },
-    { title: "Phase 4: Optimize", weeks: "Weeks 9–13", text: "Improve collections, payment timing, job margins, and cash buffer." },
-  ];
-
-  const rules = [
-    "Deposits on every job",
-    "Track job margins",
-    "No A/R past 60 days",
-    "Maintain cash buffer",
-    "No A/P past 60 days",
-    "Know your pipeline",
+    { title: "See", weeks: "Weeks 1–2", text: "Understand your real cash position and where the pressure is coming from." },
+    { title: "Fix", weeks: "Weeks 3–4", text: "Build the forecast, identify tight weeks, and put a usable operating rhythm in place." },
+    { title: "Control", weeks: "Weeks 5–8", text: "Meet weekly, compare actuals to forecast, and make clear decisions before problems hit." },
+    { title: "Optimize", weeks: "Weeks 9–13", text: "Tighten timing, improve cash movement, and strengthen the business for the next quarter." },
   ];
 
   return (
     <section id="process" className="bg-[#0F2A44] px-5 py-20 text-white md:px-8 md:py-24">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr_1fr] lg:items-start">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
             How it works
@@ -254,11 +245,11 @@ function ProcessAndRules() {
             A 13-week install, then weekly control.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-white/80">
-            This is not a report you forget about. It’s a working rhythm for decisions, cash timing, and action.
+            We do not hand you a spreadsheet and disappear. We help you build the rhythm, read the numbers, and make better cash decisions every week.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid gap-4 md:grid-cols-2">
           {phases.map((phase) => (
             <div key={phase.title} className="rounded-xl border border-white/15 bg-white/5 p-5">
               <div className="flex flex-wrap items-center justify-between gap-3">
@@ -271,23 +262,18 @@ function ProcessAndRules() {
             </div>
           ))}
         </div>
+      </div>
 
-        <div>
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]">
-            Implemented weekly
-          </p>
-          <h2 className="text-4xl font-black leading-tight tracking-tight">
-            Cash control rules that stop leaks.
-          </h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            {rules.map((rule) => (
-              <div key={rule} className="flex items-center gap-4 rounded-xl border border-white/15 bg-white/5 p-4">
-                <CheckCircle2 className="h-6 w-6 flex-none text-[#F6A51A]" />
-                <p className="text-base font-black">{rule}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="mx-auto mt-14 max-w-7xl rounded-2xl border border-white/15 bg-white/5 p-8 text-center">
+        <p className="text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]">
+          What we protect
+        </p>
+        <h3 className="mx-auto mt-4 max-w-4xl text-3xl font-black leading-tight md:text-5xl">
+          We help stop cash from breaking in the places most contractors lose control.
+        </h3>
+        <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-white/80">
+          Timing, collections, job visibility, spending decisions, and runway. The details get handled inside the engagement — not published as a checklist for everyone else to copy.
+        </p>
       </div>
     </section>
   );
@@ -310,24 +296,29 @@ function OutcomesAndTrust() {
   ];
 
   const after = [
-    "Know what you can spend",
+    "Know what you can safely spend",
     "See tight weeks ahead",
-    "Clear A/R and A/P rules",
-    "Weekly cash decisions",
-    "Stronger cash position",
+    "Catch risks before they hit",
+    "Make weekly cash decisions",
+    "Build a stronger cash position",
   ];
 
   return (
     <section id="outcomes" className="bg-white px-5 py-20 md:px-8 md:py-24">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.25fr_0.8fr] lg:items-start">
-        <div>
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-            The outcome
-          </p>
-          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
-            Know what you can afford. Decide with confidence.
-          </h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+              The outcome
+            </p>
+            <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
+              Stop guessing what you can afford.
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-slate-700">
+              The goal is not more reporting. The goal is knowing what to do next — before cash gets tight.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {outcomes.map(({ icon: Icon, title, text }) => (
               <div key={title} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
                 <Icon className="h-8 w-8 text-green-700" />
@@ -338,45 +329,47 @@ function OutcomesAndTrust() {
           </div>
         </div>
 
-        <div>
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-            Before and after cash control
-          </p>
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-2xl bg-slate-100 p-6 text-left">
-              <h3 className="text-2xl font-black text-[#0F2A44]">Before</h3>
-              <ul className="mt-5 space-y-4">
-                {before.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm font-bold text-slate-700">
-                    <span className="flex h-5 w-5 flex-none items-center justify-center rounded-full bg-white text-[#0F2A44]">×</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+        <div className="mt-14 grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div>
+            <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+              Before and after cash control
+            </p>
+            <div className="grid gap-5 md:grid-cols-2">
+              <div className="rounded-2xl bg-slate-100 p-6 text-left">
+                <h3 className="text-2xl font-black text-[#0F2A44]">Before</h3>
+                <ul className="mt-5 space-y-4">
+                  {before.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm font-bold text-slate-700">
+                      <span className="flex h-5 w-5 flex-none items-center justify-center rounded-full bg-white text-[#0F2A44]">×</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-2xl bg-[#0F2A44] p-6 text-left text-white">
+                <h3 className="text-2xl font-black">After</h3>
+                <ul className="mt-5 space-y-4">
+                  {after.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm font-bold text-white/90">
+                      <CheckCircle2 className="h-5 w-5 flex-none text-[#F6A51A]" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="rounded-2xl bg-[#0F2A44] p-6 text-left text-white">
-              <h3 className="text-2xl font-black">After</h3>
-              <ul className="mt-5 space-y-4">
-                {after.map((item) => (
-                  <li key={item} className="flex gap-3 text-sm font-bold text-white/90">
-                    <CheckCircle2 className="h-5 w-5 flex-none text-[#F6A51A]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="mt-8">
+              <CTAButton />
             </div>
           </div>
-          <div className="mt-8 text-center">
-            <CTAButton />
-          </div>
-        </div>
 
-        <div className="rounded-2xl bg-slate-100 p-4 shadow-sm">
-          <img
-            src="/heather.jpg"
-            alt="Heather Nickel, founder and operator of Cash Control System"
-            className="aspect-[4/5] w-full rounded-xl object-cover object-top shadow-lg"
-          />
+          <div className="rounded-2xl bg-slate-100 p-4 shadow-sm">
+            <img
+              src="/heather.jpg"
+              alt="Heather Nickel, founder and operator of Cash Control System"
+              className="aspect-[4/5] w-full rounded-xl object-cover object-top shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -445,7 +438,7 @@ export default function App() {
       <Header />
       <Hero />
       <ProblemAndSystem />
-      <ProcessAndRules />
+      <ProcessSection />
       <OutcomesAndTrust />
       <FAQAndCTA />
       <Footer />

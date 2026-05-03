@@ -26,7 +26,7 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
-function CTAButton({ children = "Book a Cash Review", dark = false }) {
+function CTAButton({ children = "Find Where Cash Is Stuck", dark = false }) {
   return (
     <a
       href={CALENDLY_URL}
@@ -68,11 +68,11 @@ function Header() {
         <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-wide md:flex">
           <a href="#system" className="hover:text-[#F6A51A]">System</a>
           <a href="#process" className="hover:text-[#F6A51A]">Process</a>
-          <a href="#outcomes" className="hover:text-[#F6A51A]">Outcomes</a>
+          <a href="#fit" className="hover:text-[#F6A51A]">Fit</a>
           <a href="#faq" className="hover:text-[#F6A51A]">FAQ</a>
         </nav>
         <div className="hidden md:block">
-          <CTAButton>Book a Review</CTAButton>
+          <CTAButton>Book a 15-Min Review</CTAButton>
         </div>
         <button className="md:hidden" aria-label="Open menu">
           <Menu className="h-8 w-8" />
@@ -99,7 +99,7 @@ function Hero() {
             variants={fadeUp}
             className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]"
           >
-            Built for contractors who want cash clarity
+            For contractors making money but still feeling cash pressure
           </motion.p>
           <motion.h1
             variants={fadeUp}
@@ -111,7 +111,7 @@ function Hero() {
             variants={fadeUp}
             className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-white/90 md:text-2xl"
           >
-            We install a weekly cash control system so you know what is coming, where cash is getting stuck, and what you can safely afford next.
+            We install a weekly cash control system so you know what is coming, where cash is getting stuck, and what you can safely afford before one bad decision wipes out months of margin.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -119,7 +119,7 @@ function Hero() {
           >
             <CTAButton />
             <p className="max-w-sm text-sm font-semibold text-white/80">
-              15 minutes. We’ll walk through your cash and show you what is happening.
+              15 minutes. We’ll walk through what is happening and whether this system makes sense.
             </p>
           </motion.div>
           <motion.div
@@ -128,7 +128,7 @@ function Hero() {
           >
             <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> See weeks ahead</span>
             <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> Find cash leaks</span>
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> Make better decisions</span>
+            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> Make decisions without guessing</span>
           </motion.div>
         </motion.div>
       </div>
@@ -177,7 +177,7 @@ function ProblemAndSystem() {
             The problem
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
-            Cash feels tight even when you’re busy.
+            Cash feels tight even when the work is there.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-700">
             Revenue is not the same as control. If you can’t see what’s coming, every decision feels heavier than it should.
@@ -284,6 +284,59 @@ function ProcessSection() {
   );
 }
 
+function FitSection() {
+  const goodFit = [
+    "You run a contractor or service business where timing matters.",
+    "You are busy, but cash still feels unclear or tighter than it should.",
+    "You want someone to install the rhythm with you — not just hand you a template.",
+  ];
+
+  const notFit = [
+    "You only want a free spreadsheet or DIY calculator.",
+    "You are not willing to look at cash weekly.",
+    "You want accounting reports, but not decision support.",
+  ];
+
+  return (
+    <section id="fit" className="bg-slate-100 px-5 py-20 md:px-8 md:py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
+            Who this is for
+          </p>
+          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
+            This is for owners who want control, not more homework.
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl bg-white p-8 shadow-sm">
+            <h3 className="text-2xl font-black text-[#0F2A44]">Good fit</h3>
+            <ul className="mt-6 space-y-5">
+              {goodFit.map((item) => (
+                <li key={item} className="flex gap-3 text-base font-bold text-slate-700">
+                  <CheckCircle2 className="h-6 w-6 flex-none text-green-700" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl bg-white p-8 shadow-sm">
+            <h3 className="text-2xl font-black text-[#0F2A44]">Not the right fit</h3>
+            <ul className="mt-6 space-y-5">
+              {notFit.map((item) => (
+                <li key={item} className="flex gap-3 text-base font-bold text-slate-700">
+                  <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-200 text-[#0F2A44]">×</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function OutcomesSection() {
   const outcomes = [
     { icon: Eye, title: "Clear visibility", text: "See your cash with confidence." },
@@ -385,6 +438,9 @@ function FounderSection() {
           <p className="mt-6 text-xl leading-relaxed text-slate-700">
             I don’t give you a report and leave you to figure it out. I work through your cash with you, install the rhythm, and help you make better decisions every week.
           </p>
+          <p className="mt-5 text-lg leading-relaxed text-slate-700">
+            My background is operations, systems, and execution. The value is not just seeing the numbers — it is knowing what to do with them.
+          </p>
           <p className="mt-5 text-lg font-bold leading-relaxed text-[#0F2A44]">
             Heather Nickel, founder and operator of Cash Control System.
           </p>
@@ -418,7 +474,7 @@ function FAQAndCTA() {
               If cash feels unclear, this fixes it.
             </h2>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
-              Book a cash review and we’ll walk through where cash is getting stuck, what’s coming next, and whether the system makes sense for your business.
+              Book a 15-minute cash review and we’ll walk through where cash is getting stuck, what’s coming next, and whether this system makes sense for your business.
             </p>
           </div>
           <CTAButton />
@@ -470,6 +526,7 @@ export default function App() {
       <Hero />
       <ProblemAndSystem />
       <ProcessSection />
+      <FitSection />
       <OutcomesSection />
       <FounderSection />
       <FAQAndCTA />

@@ -26,7 +26,7 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
-function CTAButton({ children = "Find Where Cash Is Stuck", dark = false }) {
+function CTAButton({ children = "See Your Cash Exposure", dark = false }) {
   return (
     <a
       href={CALENDLY_URL}
@@ -41,15 +41,6 @@ function CTAButton({ children = "Find Where Cash Is Stuck", dark = false }) {
       {children}
       <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
     </a>
-  );
-}
-
-function Highlight({ children }) {
-  return (
-    <span className="relative inline-block px-3 text-white">
-      <span className="absolute inset-x-0 bottom-1 top-2 -z-10 -rotate-1 bg-[#1399C9]" />
-      {children}
-    </span>
   );
 }
 
@@ -105,21 +96,21 @@ function Hero() {
             variants={fadeUp}
             className="mx-auto max-w-5xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl"
           >
-            Busy, but your <Highlight>cash</Highlight> is still tight?
+            Stop making cash decisions off your bank balance.
           </motion.h1>
           <motion.p
             variants={fadeUp}
             className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-white/90 md:text-2xl"
           >
-            We install a weekly cash control system so you know what is coming, where cash is getting stuck, and what you can safely afford before one bad decision wipes out months of margin.
+            See where your cash gets tight and what you can actually afford before it happens.
           </motion.p>
           <motion.div
             variants={fadeUp}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <CTAButton />
+            <CTAButton>See Your Cash Exposure</CTAButton>
             <p className="max-w-sm text-sm font-semibold text-white/80">
-              15 minutes. We’ll walk through what is happening and whether this system makes sense.
+              15 minutes. We’ll show you what is happening and where decisions get risky.
             </p>
           </motion.div>
           <motion.div
@@ -180,7 +171,7 @@ function ProblemAndSystem() {
             Cash feels tight even when the work is there.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-700">
-            Revenue is not the same as control. If you can’t see what’s coming, every decision feels heavier than it should.
+            Most contractors don’t know what their cash looks like 2–4 weeks out. They’re making decisions based on what’s in the bank today.
           </p>
           <div className="mt-8 divide-y divide-slate-200">
             {problems.map((item) => (
@@ -194,7 +185,7 @@ function ProblemAndSystem() {
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-            You don’t need more reports. You need a system.
+            You don’t need more reports. You need a decision system.
           </p>
           <div className="grid gap-5 md:grid-cols-3">
             {steps.map((step, index) => {
@@ -247,10 +238,10 @@ function ProcessSection() {
             How it works
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">
-            A 13-week install, then weekly control.
+            Diagnosis first. The full forecast comes with the paid system.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-white/80">
-            We do not hand you a spreadsheet and disappear. We help you build the rhythm, read the numbers, and make better cash decisions every week.
+            The first call is not a forecast build. It is a focused look at your burn rate, cash exposure, and where decisions are getting risky. The paid system installs the 13-week forecast and weekly decision rhythm.
           </p>
         </div>
 
@@ -277,7 +268,7 @@ function ProcessSection() {
           We help stop cash from breaking in the places most contractors lose control.
         </h3>
         <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-white/80">
-          Timing, collections, job visibility, spending decisions, and runway. The details get handled inside the engagement — not published as a checklist for everyone else to copy.
+          Timing, collections, job visibility, spending decisions, and runway. The details get handled inside the engagement, not published as a checklist for everyone else to copy.
         </p>
       </div>
     </section>
@@ -288,7 +279,7 @@ function FitSection() {
   const goodFit = [
     "You run a contractor or service business where timing matters.",
     "You are busy, but cash still feels unclear or tighter than it should.",
-    "You want someone to install the rhythm with you — not just hand you a template.",
+    "You want someone to install the rhythm with you, not just hand you a template.",
   ];
 
   const notFit = [
@@ -305,7 +296,7 @@ function FitSection() {
             Who this is for
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
-            This is for owners who want control, not more homework.
+            This is for owners who want better decisions, not more homework.
           </h2>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -373,7 +364,7 @@ function OutcomesSection() {
               Stop guessing what you can afford.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-700">
-              The goal is not more reporting. The goal is knowing what to do next — before cash gets tight.
+              The goal is not more reporting. The goal is knowing what decision to make next before cash gets tight.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -433,13 +424,13 @@ function FounderSection() {
             Built with you
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
-            Built and run with you — not handed off.
+            Built and run with you, not handed off.
           </h2>
           <p className="mt-6 text-xl leading-relaxed text-slate-700">
             I don’t give you a report and leave you to figure it out. I work through your cash with you, install the rhythm, and help you make better decisions every week.
           </p>
           <p className="mt-5 text-lg leading-relaxed text-slate-700">
-            My background is operations, systems, and execution. The value is not just seeing the numbers — it is knowing what to do with them.
+            My background is operations, systems, and execution. The value is not just seeing the numbers. It is knowing what to do with them.
           </p>
           <p className="mt-5 text-lg font-bold leading-relaxed text-[#0F2A44]">
             Heather Nickel, founder and operator of Cash Control System.
@@ -471,13 +462,13 @@ function FAQAndCTA() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
           <div>
             <h2 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">
-              If cash feels unclear, this fixes it.
+              If cash decisions feel risky, start here.
             </h2>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
-              Book a 15-minute cash review and we’ll walk through where cash is getting stuck, what’s coming next, and whether this system makes sense for your business.
+              Book a 15-minute cash exposure review. We’ll look at your burn rate, where cash gets tight, and whether the paid system makes sense for your business.
             </p>
           </div>
-          <CTAButton />
+          <CTAButton>See Your Cash Exposure</CTAButton>
         </div>
       </div>
 
@@ -508,7 +499,7 @@ function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center">
         <div>
           <div className="text-2xl font-black uppercase tracking-tight">Cash Control System</div>
-          <p className="mt-2 text-white/70">See your cash. Fix the leaks. Stay in control.</p>
+          <p className="mt-2 text-white/70">See your cash. Make better decisions. Stay in control.</p>
         </div>
         <div className="flex flex-col gap-3 text-white/80 md:items-end">
           <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:text-[#F6A51A]"><Phone className="h-4 w-4" /> Book a Cash Review</a>

@@ -102,7 +102,7 @@ function Hero() {
             variants={fadeUp}
             className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-white/90 md:text-2xl"
           >
-            You don’t know what you can confidently do next. We show you where cash gets tight so you can make the right call before it costs you.
+            We show you where cash gets tight and what that means for your next move.
           </motion.p>
           <motion.div
             variants={fadeUp}
@@ -139,22 +139,22 @@ function ProblemAndSystem() {
       title: "See",
       color: "text-red-700",
       icon: Eye,
-      subtitle: "Understand what is actually happening with your cash.",
-      bullets: ["Cash position", "Runway", "Where cash is stuck"],
+      subtitle: "Understand what your cash is actually doing.",
+      bullets: ["Burn rate and runway", "Where cash is getting stuck", "Where decisions get risky"],
     },
     {
       title: "Fix",
       color: "text-[#C88800]",
       icon: ShieldCheck,
-      subtitle: "Know where things break and what needs to change.",
-      bullets: ["13-week view", "Risk weeks", "Decision rhythm"],
+      subtitle: "Build a forward view so you can see what’s coming.",
+      bullets: ["13-week cash view", "Identify tight weeks early", "Create a weekly decision rhythm"],
     },
     {
       title: "Control",
       color: "text-green-700",
       icon: RefreshCw,
-      subtitle: "Make the right decision every week.",
-      bullets: ["Weekly review", "Clear actions", "Quarterly reset"],
+      subtitle: "Make the right call every week before problems hit.",
+      bullets: ["Weekly cash review", "Compare actuals vs plan", "Decide and act early"],
     },
   ];
 
@@ -182,9 +182,11 @@ function ProblemAndSystem() {
         </motion.div>
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-          <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-            You don’t need more reports. You need to know what to do next.
-          </p>
+          <div className="mb-7 rounded-2xl bg-[#0F2A44] px-6 py-5 text-white shadow-sm">
+            <p className="text-2xl font-black leading-tight md:text-3xl">
+              You don’t need more reports. You need to know what to do next.
+            </p>
+          </div>
           <div className="grid gap-5 md:grid-cols-3">
             {steps.map((step, index) => {
               const Icon = step.icon;
@@ -222,9 +224,9 @@ function ProblemAndSystem() {
 
 function ProcessSection() {
   const phases = [
-    { title: "See", weeks: "Weeks 1 to 2", text: "Understand your real cash position and where the pressure is coming from." },
-    { title: "Fix", weeks: "Weeks 3 to 4", text: "Build the forecast, identify tight weeks, and put a usable operating rhythm in place." },
-    { title: "Control", weeks: "Weeks 5 to 8", text: "Meet weekly, compare actuals to forecast, and make clear decisions before problems hit." },
+    { title: "See", weeks: "Weeks 1 to 2", text: "Understand your burn rate, runway, and where the pressure is coming from." },
+    { title: "Fix", weeks: "Weeks 3 to 4", text: "Build the 13-week cash view, identify tight weeks, and set the operating rhythm." },
+    { title: "Control", weeks: "Weeks 5 to 8", text: "Meet weekly, compare actuals vs plan, and make clear decisions before problems hit." },
     { title: "Optimize", weeks: "Weeks 9 to 13", text: "Tighten timing, improve cash movement, and strengthen the business for the next quarter." },
   ];
 
@@ -239,7 +241,7 @@ function ProcessSection() {
             Diagnosis first. The full forecast comes with the paid system.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-white/80">
-            The first call is not a forecast build. It is a focused look at your burn rate, cash exposure, and where decisions are getting risky. The paid system installs the 13-week forecast and weekly decision rhythm.
+            The first step is diagnosis. We look at your burn rate, cash exposure, and where decisions are getting risky. The full 13-week system is built after that.
           </p>
         </div>
 
@@ -328,7 +330,7 @@ function FitSection() {
 
 function OutcomesSection() {
   const outcomes = [
-    { icon: Eye, title: "Clear visibility", text: "See what is happening with your cash." },
+    { icon: Eye, title: "Clear visibility", text: "See what is happening before it becomes a problem." },
     { icon: CheckCircle2, title: "Confident decisions", text: "Know what you can afford and when." },
     { icon: ShieldCheck, title: "Fewer surprises", text: "Catch issues before they become problems." },
     { icon: DollarSign, title: "Stronger position", text: "More control. More freedom." },
@@ -463,7 +465,7 @@ function FAQAndCTA() {
               If you’re not sure what you can afford next, start here.
             </h2>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
-              Book a 15-minute cash review. We’ll look at your burn rate, where cash gets tight, and whether the paid system makes sense for your business.
+              Book a 15-minute cash decision review. We’ll look at your burn rate, where cash gets tight, and whether the paid system makes sense for your business.
             </p>
           </div>
           <CTAButton>See What You Can Afford</CTAButton>

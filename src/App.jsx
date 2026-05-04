@@ -26,7 +26,7 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
 
-function CTAButton({ children = "See Your Cash Exposure", dark = false }) {
+function CTAButton({ children = "See What You Can Afford", dark = false }) {
   return (
     <a
       href={CALENDLY_URL}
@@ -90,25 +90,25 @@ function Hero() {
             variants={fadeUp}
             className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]"
           >
-            For contractors making money but still feeling cash pressure
+            For contractors unsure what to do next with cash
           </motion.p>
           <motion.h1
             variants={fadeUp}
             className="mx-auto max-w-5xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl"
           >
-            Stop making cash decisions off your bank balance.
+            Stop guessing what you can afford.
           </motion.h1>
           <motion.p
             variants={fadeUp}
             className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-white/90 md:text-2xl"
           >
-            See where your cash gets tight and what you can actually afford before it happens.
+            You don’t know what you can confidently do next. We show you where cash gets tight so you can make the right call before it costs you.
           </motion.p>
           <motion.div
             variants={fadeUp}
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <CTAButton>See Your Cash Exposure</CTAButton>
+            <CTAButton>See What You Can Afford</CTAButton>
             <p className="max-w-sm text-sm font-semibold text-white/80">
               15 minutes. We’ll show you what is happening and where decisions get risky.
             </p>
@@ -129,11 +129,9 @@ function Hero() {
 
 function ProblemAndSystem() {
   const problems = [
-    "You are making decisions off today’s bank balance.",
-    "You do not know what cash looks like 2–4 weeks out.",
-    "Cash is getting stuck in timing gaps, collections, or job performance.",
-    "You are unsure if you can hire, spend, pay yourself, or take on the next job.",
-    "One bad cash decision can wipe out months of margin.",
+    "You don’t know if you can hire, spend, pay yourself, or take on the next job.",
+    "Cash gets stuck in timing, collections, or job performance.",
+    "One bad decision can wipe out months of margin.",
   ];
 
   const steps = [
@@ -141,21 +139,21 @@ function ProblemAndSystem() {
       title: "See",
       color: "text-red-700",
       icon: Eye,
-      subtitle: "Get the real picture of your cash.",
+      subtitle: "Understand what is actually happening with your cash.",
       bullets: ["Cash position", "Runway", "Where cash is stuck"],
     },
     {
       title: "Fix",
       color: "text-[#C88800]",
       icon: ShieldCheck,
-      subtitle: "Build a working plan, not another report.",
+      subtitle: "Know where things break and what needs to change.",
       bullets: ["13-week view", "Risk weeks", "Decision rhythm"],
     },
     {
       title: "Control",
       color: "text-green-700",
       icon: RefreshCw,
-      subtitle: "Stay on top of cash every week.",
+      subtitle: "Make the right decision every week.",
       bullets: ["Weekly review", "Clear actions", "Quarterly reset"],
     },
   ];
@@ -168,10 +166,10 @@ function ProblemAndSystem() {
             The problem
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
-            Cash feels tight even when the work is there.
+            You’re not sure what you can confidently do next.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-700">
-            Most contractors don’t know what their cash looks like 2–4 weeks out. They’re making decisions based on what’s in the bank today.
+            Most contractors don’t know what their cash looks like 2 to 4 weeks out. They’re making decisions based on what’s in the bank today.
           </p>
           <div className="mt-8 divide-y divide-slate-200">
             {problems.map((item) => (
@@ -185,7 +183,7 @@ function ProblemAndSystem() {
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">
-            You don’t need more reports. You need a decision system.
+            You don’t need more reports. You need to know what to do next.
           </p>
           <div className="grid gap-5 md:grid-cols-3">
             {steps.map((step, index) => {
@@ -224,10 +222,10 @@ function ProblemAndSystem() {
 
 function ProcessSection() {
   const phases = [
-    { title: "See", weeks: "Weeks 1–2", text: "Understand your real cash position and where the pressure is coming from." },
-    { title: "Fix", weeks: "Weeks 3–4", text: "Build the forecast, identify tight weeks, and put a usable operating rhythm in place." },
-    { title: "Control", weeks: "Weeks 5–8", text: "Meet weekly, compare actuals to forecast, and make clear decisions before problems hit." },
-    { title: "Optimize", weeks: "Weeks 9–13", text: "Tighten timing, improve cash movement, and strengthen the business for the next quarter." },
+    { title: "See", weeks: "Weeks 1 to 2", text: "Understand your real cash position and where the pressure is coming from." },
+    { title: "Fix", weeks: "Weeks 3 to 4", text: "Build the forecast, identify tight weeks, and put a usable operating rhythm in place." },
+    { title: "Control", weeks: "Weeks 5 to 8", text: "Meet weekly, compare actuals to forecast, and make clear decisions before problems hit." },
+    { title: "Optimize", weeks: "Weeks 9 to 13", text: "Tighten timing, improve cash movement, and strengthen the business for the next quarter." },
   ];
 
   return (
@@ -278,7 +276,7 @@ function ProcessSection() {
 function FitSection() {
   const goodFit = [
     "You run a contractor or service business where timing matters.",
-    "You are busy, but cash still feels unclear or tighter than it should.",
+    "You are busy, but your next cash decision still feels unclear.",
     "You want someone to install the rhythm with you, not just hand you a template.",
   ];
 
@@ -296,7 +294,7 @@ function FitSection() {
             Who this is for
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
-            This is for owners who want better decisions, not more homework.
+            This is for owners who want to make the right call, not guess.
           </h2>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -330,8 +328,8 @@ function FitSection() {
 
 function OutcomesSection() {
   const outcomes = [
-    { icon: Eye, title: "Clear visibility", text: "See your cash with confidence." },
-    { icon: CheckCircle2, title: "Better decisions", text: "Know what you can afford and when." },
+    { icon: Eye, title: "Clear visibility", text: "See what is happening with your cash." },
+    { icon: CheckCircle2, title: "Confident decisions", text: "Know what you can afford and when." },
     { icon: ShieldCheck, title: "Fewer surprises", text: "Catch issues before they become problems." },
     { icon: DollarSign, title: "Stronger position", text: "More control. More freedom." },
   ];
@@ -345,7 +343,7 @@ function OutcomesSection() {
   ];
 
   const after = [
-    "Know what you can safely spend",
+    "Know what you can confidently spend",
     "See tight weeks ahead",
     "Catch risks before they hit",
     "Make weekly cash decisions",
@@ -364,7 +362,7 @@ function OutcomesSection() {
               Stop guessing what you can afford.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-700">
-              The goal is not more reporting. The goal is knowing what decision to make next before cash gets tight.
+              The goal is knowing what you can confidently do next.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -462,13 +460,13 @@ function FAQAndCTA() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
           <div>
             <h2 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">
-              If cash decisions feel risky, start here.
+              If you’re not sure what you can afford next, start here.
             </h2>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
-              Book a 15-minute cash exposure review. We’ll look at your burn rate, where cash gets tight, and whether the paid system makes sense for your business.
+              Book a 15-minute cash review. We’ll look at your burn rate, where cash gets tight, and whether the paid system makes sense for your business.
             </p>
           </div>
-          <CTAButton>See Your Cash Exposure</CTAButton>
+          <CTAButton>See What You Can Afford</CTAButton>
         </div>
       </div>
 

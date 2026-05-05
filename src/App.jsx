@@ -278,15 +278,19 @@ function ProcessSection() {
 
 function FitSection() {
   const goodFit = [
-    "You run a contractor or service business where timing matters.",
-    "You’re making decisions but don’t have a clear view ahead.",
-    "You want someone to install the rhythm with you, not just hand you a template.",
+    "You run a growing contractor or service business, typically between $1M–$10M in revenue.",
+    "You have a small team, likely 5–40 employees, and you’re still heavily involved in operations and decisions.",
+    "Work is moving, but cash still feels unpredictable at times.",
+    "You have a bookkeeper or admin, but no real cash control rhythm.",
+    "You’re making decisions based on what’s in the bank instead of what’s coming next.",
+    "You want practical visibility and weekly control, not complicated financial reports.",
   ];
 
   const notFit = [
-    "You only want a free spreadsheet or DIY calculator.",
-    "You are not willing to look at cash weekly.",
-    "You want accounting reports, but not decision support.",
+    "You only want a spreadsheet, template, or software tool.",
+    "You’re looking for bookkeeping, tax filing, or corporate CFO services.",
+    "You want to set it and forget it instead of reviewing cash weekly.",
+    "You already have a mature finance team and strong forward cash visibility.",
   ];
 
   return (
@@ -297,7 +301,7 @@ function FitSection() {
             Who this is for
           </p>
           <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
-            This is for owners who want to make the right call, not guess.
+            Built for growing contractors who are still too close to the cash.
           </h2>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">

@@ -56,12 +56,13 @@ function Header() {
             Cash Control System
           </div>
         </a>
-        <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-wide md:flex">
-          <a href="#system" className="hover:text-[#F6A51A]">System</a>
-          <a href="#process" className="hover:text-[#F6A51A]">Process</a>
-          <a href="#fit" className="hover:text-[#F6A51A]">Fit</a>
-          <a href="#faq" className="hover:text-[#F6A51A]">FAQ</a>
-        </nav>
+  <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-wide md:flex">
+  <a href="#system" className="hover:text-[#F6A51A]">System</a>
+  <a href="#process" className="hover:text-[#F6A51A]">Process</a>
+  <a href="#fit" className="hover:text-[#F6A51A]">Fit</a>
+  <a href="/insights" className="hover:text-[#F6A51A]">Insights</a>
+  <a href="#faq" className="hover:text-[#F6A51A]">FAQ</a>
+</nav>
         <div className="hidden md:block">
           <CTAButton>Book a 15-Min Review</CTAButton>
         </div>

@@ -44,6 +44,12 @@
       padding-left: 24px;
     }
 
+    img {
+      width: 100%;
+      border-radius: 18px;
+      margin: 30px 0;
+    }
+
     .cta {
       margin-top: 60px;
       padding: 35px;
@@ -60,6 +66,11 @@
       font-weight: bold;
       padding: 14px 22px;
       text-decoration: none;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #0f2a44;
     }
   </style>
 </head>
@@ -97,6 +108,11 @@
   <p>
     So when I meet a contractor who is making decisions based on their bank account, it’s a vulnerable spot to be because there are so many hidden operational factors that can affect cash at any moment.
   </p>
+
+  <img 
+    src="/images/IMG_0372.webp"
+    alt="Contractor stressed reviewing cash balance and payroll timing"
+  />
 
   <h2>Meet Henry</h2>
 
@@ -164,14 +180,19 @@
 
   <h2>The 6 Timing Issues That Trap Cash</h2>
 
+  <img 
+    src="/images/IMG_0373.webp"
+    alt="Construction cash flow timing infographic showing why contractors stay busy but cash feels tight"
+  />
+
   <h2>1. Deposits</h2>
 
   <p>
-    Low hanging fruit to stop being busy but broke is taking deposits.
+    Low hanging fruit to stop being busy but broke is taking deposits. You take deposits on all your jobs and for any job over a month you take draws. This keeps your people paid and the lights on.
   </p>
 
   <p>
-    You take deposits on all your jobs and for any job over a month you take draws. This keeps your people paid and the lights on.
+    If you’re buying materials up front, your cash can get eaten quickly if timing slips. If the job takes longer or is delayed that’s inventory you sit on. Your jobs should all contain money up front.
   </p>
 
   <h2>2. Accounts Receivable Timing</h2>
@@ -183,6 +204,16 @@
   <p>
     I’ve worked in the accounting department for many businesses over the years and I’ll let you know a secret: if there are cashflow issues with your client, they will pay their squeaky wheel first.
   </p>
+
+  <p>
+    The remedy to avoid this is to:
+  </p>
+
+  <ul>
+    <li>take draws</li>
+    <li>follow up with anyone past 30 days</li>
+    <li>make sure invoices go out on time</li>
+  </ul>
 
   <h2>3. Payroll Timing</h2>
 
@@ -244,6 +275,22 @@
 
   <p>
     The better way is to create visibility before the stress hits.
+  </p>
+
+  <p>
+    You want to know:
+  </p>
+
+  <ul>
+    <li>what cash looks like over the next few weeks</li>
+    <li>where cash is getting stuck</li>
+    <li>whether you can actually afford the hire</li>
+    <li>whether a delayed project changes your position</li>
+    <li>where tight weeks are coming before they happen</li>
+  </ul>
+
+  <p>
+    Because when you can see cash clearly, you stop reacting and start making better decisions.
   </p>
 
   <div class="cta">

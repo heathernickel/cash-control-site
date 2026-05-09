@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -45,10 +45,14 @@ function CTAButton({ children = "Book a Cash Review", dark = false }) {
 }
 
 function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
   return (
-    <header className="sticky top-0 z-50 bg-[#0F2A44] text-white shadow-lg">
+    <header className="sticky top-0 z-[90] bg-[#0F2A44] text-white shadow-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
-        <a href="#top" className="flex items-center gap-3">
+        <a href="#top" className="flex items-center gap-3" onClick={closeMobileMenu}>
           <div className="flex h-10 w-10 items-center justify-center border-2 border-white font-black">
             CC
           </div>
@@ -56,20 +60,55 @@ function Header() {
             Cash Control System
           </div>
         </a>
-  <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-wide md:flex">
-  <a href="#system" className="hover:text-[#F6A51A]">System</a>
-  <a href="#process" className="hover:text-[#F6A51A]">Process</a>
-  <a href="#fit" className="hover:text-[#F6A51A]">Fit</a>
-  <a href="/insights" className="hover:text-[#F6A51A]">Insights</a>
-  <a href="#faq" className="hover:text-[#F6A51A]">FAQ</a>
-</nav>
+        <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-wide md:flex">
+          <a href="#system" className="hover:text-[#F6A51A]">System</a>
+          <a href="#process" className="hover:text-[#F6A51A]">Process</a>
+          <a href="#fit" className="hover:text-[#F6A51A]">Fit</a>
+          <a href="/insights" className="hover:text-[#F6A51A]">Insights</a>
+          <a href="#faq" className="hover:text-[#F6A51A]">FAQ</a>
+        </nav>
         <div className="hidden md:block">
           <CTAButton>Book a 15-Min Review</CTAButton>
         </div>
-        <button className="md:hidden" aria-label="Open menu">
+        <button
+          className="relative z-[101] md:hidden"
+          aria-label="Open menu"
+          aria-expanded={mobileMenuOpen}
+          onClick={() => setMobileMenuOpen((open) => !open)}
+          type="button"
+        >
           <Menu className="h-8 w-8" />
         </button>
       </div>
+
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-[100] bg-[#0F2A44] px-8 pt-28 text-white md:hidden">
+          <button
+            className="absolute right-6 top-6 text-5xl font-black leading-none text-white"
+            aria-label="Close menu"
+            onClick={closeMobileMenu}
+            type="button"
+          >
+            ×
+          </button>
+          <nav className="flex flex-col gap-7 text-3xl font-black uppercase tracking-tight">
+            <a href="#system" onClick={closeMobileMenu}>System</a>
+            <a href="#process" onClick={closeMobileMenu}>Process</a>
+            <a href="#fit" onClick={closeMobileMenu}>Fit</a>
+            <a href="/insights" onClick={closeMobileMenu}>Insights</a>
+            <a href="#faq" onClick={closeMobileMenu}>FAQ</a>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeMobileMenu}
+              className="mt-4 bg-[#F6A51A] px-6 py-5 text-center text-xl font-black text-black"
+            >
+              Book a Cash Review
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

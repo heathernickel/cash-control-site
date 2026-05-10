@@ -144,19 +144,13 @@ function Hero() {
           >
             Most contractors don’t know what their cash looks like a few weeks from now. We show you where it gets tight so you can make the right call before it costs you.
           </motion.p>
-          <motion.p
-            variants={fadeUp}
-            className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-white/60 md:text-base"
-          >
-            Built by The Eighty Twenty Group, this system helps contractors focus on the 20% of cash decisions that drive 80% of financial control.
-          </motion.p>
           <motion.div
             variants={fadeUp}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="mt-10 flex flex-col items-center justify-center gap-4"
           >
             <CTAButton>Book a Cash Review</CTAButton>
-            <p className="max-w-sm text-sm font-semibold text-white/80">
-              15 minutes. We’ll show you what is happening and where decisions get risky.
+            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
+              Built by The Eighty Twenty Group, this system helps contractors focus on the 20% of cash decisions that drive 80% of financial control.
             </p>
           </motion.div>
           <motion.div
@@ -206,7 +200,7 @@ function ProblemAndSystem() {
   ];
 
   return (
-    <section id="system" className="bg-white px-5 py-18 md:px-8 md:py-24">
+    <section id="system" className="bg-white px-5 pt-28 pb-20 md:px-8 md:pt-32 md:pb-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.4fr] lg:items-start">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
           <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">

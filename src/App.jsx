@@ -46,20 +46,16 @@ function CTAButton({ children = "Apply for a Cash Review", dark = false }) {
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <header className="sticky top-0 z-[90] bg-[#0F2A44] text-white shadow-lg">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
         <a href="#top" className="flex items-center gap-3" onClick={closeMobileMenu}>
-          <div className="flex h-10 w-10 items-center justify-center border-2 border-white font-black">
-            CC
-          </div>
-          <div className="text-xl font-black uppercase tracking-tight md:text-2xl">
-            Cash Control System
-          </div>
+          <div className="flex h-10 w-10 items-center justify-center border-2 border-white font-black">CC</div>
+          <div className="text-xl font-black uppercase tracking-tight md:text-2xl">Cash Control System</div>
         </a>
+
         <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-wide md:flex">
           <a href="#system" className="hover:text-[#F6A51A]">System</a>
           <a href="#process" className="hover:text-[#F6A51A]">Process</a>
@@ -67,13 +63,13 @@ function Header() {
           <a href="/insights" className="hover:text-[#F6A51A]">Insights</a>
           <a href="#faq" className="hover:text-[#F6A51A]">FAQ</a>
         </nav>
+
         <div className="hidden md:block">
           <CTAButton>Apply for a Cash Review</CTAButton>
         </div>
+
         <button
           className="relative z-[101] md:hidden"
-          aria-label="Open menu"
-          aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen((open) => !open)}
           type="button"
         >
@@ -84,28 +80,18 @@ function Header() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-[100] bg-[#0F2A44] px-8 pt-28 text-white md:hidden">
           <button
-            className="absolute right-6 top-6 text-5xl font-black leading-none text-white"
-            aria-label="Close menu"
+            className="absolute right-6 top-6 text-5xl font-black"
             onClick={closeMobileMenu}
             type="button"
-          >
-            ×
-          </button>
+          >×</button>
+
           <nav className="flex flex-col gap-7 text-3xl font-black uppercase tracking-tight">
             <a href="#system" onClick={closeMobileMenu}>System</a>
             <a href="#process" onClick={closeMobileMenu}>Process</a>
             <a href="#fit" onClick={closeMobileMenu}>Fit</a>
             <a href="/insights" onClick={closeMobileMenu}>Insights</a>
             <a href="#faq" onClick={closeMobileMenu}>FAQ</a>
-            <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeMobileMenu}
-              className="mt-4 bg-[#F6A51A] px-6 py-5 text-center text-xl font-black text-black"
-            >
-              Apply for a Cash Review
-            </a>
+            <a href={CALENDLY_URL} className="mt-4 bg-[#F6A51A] px-6 py-5 text-center text-xl font-black text-black">Apply for a Cash Review</a>
           </nav>
         </div>
       )}
@@ -123,43 +109,29 @@ function Hero() {
           className="h-full w-full object-cover"
         />
       </div>
+
       <div className="absolute inset-0 bg-gradient-to-b from-[#0F2A44]/85 via-[#0F2A44]/75 to-[#0F2A44]/95" />
+
       <div className="relative mx-auto max-w-6xl px-5 py-24 text-center md:px-8 md:py-32">
         <motion.div initial="hidden" animate="visible" variants={stagger}>
-          <motion.p
-            variants={fadeUp}
-            className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]"
-          >
+          <motion.p variants={fadeUp} className="mb-5 text-sm font-black uppercase tracking-[0.25em] text-[#F6A51A]">
             For contractors who are tired of cash surprises
           </motion.p>
-          <motion.h1
-            variants={fadeUp}
-            className="mx-auto max-w-5xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl"
-          >
+
+          <motion.h1 variants={fadeUp} className="mx-auto max-w-5xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
             Stop guessing what you can afford.
           </motion.h1>
-          <motion.p
-            variants={fadeUp}
-            className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-white/90 md:text-2xl"
-          >
+
+          <motion.p variants={fadeUp} className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-white/90 md:text-2xl">
             Most contractors don’t know what their cash looks like a few weeks from now. We show you where it gets tight so you can make the right call before it costs you.
           </motion.p>
-          <motion.div
-            variants={fadeUp}
-            className="mt-10 flex flex-col items-center justify-center gap-4"
-          >
+
+          <motion.div variants={fadeUp} className="mt-10 flex flex-col items-center justify-center gap-4">
             <CTAButton>Apply for a Cash Review</CTAButton>
+
             <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/60 md:text-base">
               Built by The Eighty Twenty Group, this system helps contractors focus on the 20% of cash decisions that drive 80% of financial control.
             </p>
-          </motion.div>
-          <motion.div
-            variants={fadeUp}
-            className="mt-12 flex flex-wrap justify-center gap-6 text-base font-bold text-white/90"
-          >
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> See where cash gets tight</span>
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> Catch problems early</span>
-            <span className="inline-flex items-center gap-2"><CheckCircle2 className="h-5 w-5" /> Make decisions without guessing</span>
           </motion.div>
         </motion.div>
       </div>
@@ -168,36 +140,75 @@ function Hero() {
 }
 
 function ProblemAndSystem() {
-  const problems = [
-    "Guessing on decisions.",
-    "Cash shows up late or leaves early.",
-    "Jobs look fine until they aren’t.",
-    "One decision can put you in a squeeze.",
-  ];
+  return (
+    <section id="system" className="bg-white px-5 pt-28 pb-20 md:px-8 md:pt-32 md:pb-24">
+      <div className="mx-auto max-w-7xl">
+        <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">The problem</p>
+        <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">
+          You’re running the business off your bank balance.
+        </h2>
+      </div>
+    </section>
+  );
+}
 
-  const steps = [
-    {
-      title: "See",
-      color: "text-red-700",
-      icon: Eye,
-      subtitle: "See where your cash actually goes and where it’s breaking.",
-      bullets: ["Burn rate and runway", "Cash trap analysis", "Where decisions get risky"],
-    },
-    {
-      title: "Fix",
-      color: "text-[#C88800]",
-      icon: ShieldCheck,
-      subtitle: "Build a 13-week view so nothing surprises you.",
-      bullets: ["Week-by-week cash view", "Tight weeks identified early", "Simple cash rhythm"],
-    },
-    {
-      title: "Control",
-      color: "text-green-700",
-      icon: RefreshCw,
-      subtitle: "Make the call before it turns into a problem.",
-      bullets: ["Weekly cash review", "Actuals vs plan", "Decide and act early"],
-    },
-  ];
+function ProcessSection() {
+  return (
+    <section id="process" className="bg-[#0F2A44] px-5 py-20 text-white md:px-8 md:py-24">
+      <div className="mx-auto max-w-7xl">
+        <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">How it works</p>
 
-  return null;
+        <h2 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">
+          Apply for a Cash Review.
+        </h2>
+
+        <p className="mt-5 max-w-4xl text-lg leading-relaxed text-white/80">
+          We start by looking at where cash may already be getting tight inside the business, before it becomes a bigger problem.
+        </p>
+
+        <p className="mt-5 max-w-4xl text-lg leading-relaxed text-white/80">
+          On the first call, we review burn rate, runway, timing pressure, upcoming risk areas, and major cash decisions you’re considering.
+        </p>
+
+        <p className="mt-5 max-w-4xl text-lg leading-relaxed text-white/80">
+          If it makes sense, we then build the full 13-week Cash Control System around your business.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="bg-[#081827] px-5 py-10 text-white md:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-center">
+        <div>
+          <div className="text-2xl font-black uppercase tracking-tight">Cash Control System</div>
+          <p className="mt-2 text-white/70">See your cash. Make better decisions. Stay in control.</p>
+        </div>
+
+        <div className="flex flex-col gap-3 text-white/80 md:items-end">
+          <a href={CALENDLY_URL} className="inline-flex items-center gap-2 hover:text-[#F6A51A]">
+            <Phone className="h-4 w-4" /> Apply for a Cash Review
+          </a>
+
+          <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 hover:text-[#F6A51A]">
+            <Mail className="h-4 w-4" /> {CONTACT_EMAIL}
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default function App() {
+  return (
+    <main className="min-h-screen bg-white font-sans">
+      <Header />
+      <Hero />
+      <ProblemAndSystem />
+      <ProcessSection />
+      <Footer />
+    </main>
+  );
 }

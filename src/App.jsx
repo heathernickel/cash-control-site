@@ -57,10 +57,9 @@ function Header() {
         </a>
         <nav className="hidden items-center gap-8 text-sm font-bold uppercase tracking-wide md:flex">
           <a href="#system" className="hover:text-[#F6A51A]">System</a>
-          <a href="#process" className="hover:text-[#F6A51A]">Process</a>
-          <a href="#fit" className="hover:text-[#F6A51A]">Fit</a>
+          <a href="/beta" className="hover:text-[#F6A51A]">Pilot Program</a>
           <a href="/insights" className="hover:text-[#F6A51A]">Insights</a>
-          <a href="#faq" className="hover:text-[#F6A51A]">FAQ</a>
+          <a href="#book" className="hover:text-[#F6A51A]">Contact</a>
         </nav>
         <div className="hidden md:block"><CTAButton>Apply for a Cash Review</CTAButton></div>
         <button className="relative z-[101] md:hidden" aria-label="Open menu" aria-expanded={mobileMenuOpen} onClick={() => setMobileMenuOpen((open) => !open)} type="button">
@@ -73,10 +72,9 @@ function Header() {
           <button className="absolute right-6 top-6 text-5xl font-black leading-none text-white" aria-label="Close menu" onClick={closeMobileMenu} type="button">×</button>
           <nav className="flex flex-col gap-7 text-3xl font-black uppercase tracking-tight">
             <a href="#system" onClick={closeMobileMenu}>System</a>
-            <a href="#process" onClick={closeMobileMenu}>Process</a>
-            <a href="#fit" onClick={closeMobileMenu}>Fit</a>
+            <a href="/beta" onClick={closeMobileMenu}>Pilot Program</a>
             <a href="/insights" onClick={closeMobileMenu}>Insights</a>
-            <a href="#faq" onClick={closeMobileMenu}>FAQ</a>
+            <a href="#book" onClick={closeMobileMenu}>Contact</a>
             <a href={CALENDLY_URL} target="_blank" rel="noreferrer" onClick={closeMobileMenu} className="mt-4 bg-[#F6A51A] px-6 py-5 text-center text-xl font-black text-black">
               Apply for a Cash Review
             </a>

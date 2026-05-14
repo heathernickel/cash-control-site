@@ -45,20 +45,23 @@
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.7; max-width: 850px; margin: 0 auto; padding: 40px 20px; color: #102033; background: #f8fafc; }
     h1, h2, h3 { color: #0f2a44; line-height: 1.2; }
-    h1 { font-size: 46px; margin-bottom: 18px; }
-    h2 { margin-top: 50px; font-size: 31px; }
-    h3 { margin-top: 32px; font-size: 24px; }
-    p, li { font-size: 19px; }
-    ul { padding-left: 24px; }
+    h1 { font-size: 46px; margin-bottom: 18px; letter-spacing: -0.03em; }
+    h2 { margin-top: 50px; font-size: 31px; letter-spacing: -0.02em; }
+    h3 { margin-top: 32px; font-size: 24px; letter-spacing: -0.01em; }
+    p, li { font-size: 19px; line-height: 1.7; }
+    p { margin: 0 0 18px; }
+    ul { padding-left: 24px; margin: 0 0 22px; }
+    li { margin-bottom: 10px; }
     a { color: #0f2a44; font-weight: 700; }
-    .eyebrow { color: #f6a51a; text-transform: uppercase; font-weight: 900; letter-spacing: .14em; font-size: 13px; margin-top: 26px; }
-    .intro { font-size: 21px; }
+    .eyebrow { color: #f6a51a; text-transform: uppercase; font-weight: 900; letter-spacing: .14em; font-size: 13px; margin-top: 26px; margin-bottom: 12px; }
+    .intro { font-size: 19px; line-height: 1.7; }
     .note { margin: 30px 0; padding: 24px; border-left: 6px solid #f6a51a; background: #fff7e6; border-radius: 12px; }
+    .note p { margin-bottom: 0; }
     .diagram { margin: 34px 0; padding: 24px; background: white; border: 1px solid #e2e8f0; border-radius: 18px; box-shadow: 0 10px 26px rgba(15,42,68,.06); }
-    .diagram-title { font-size: 20px; font-weight: 900; color: #0f2a44; margin-bottom: 18px; }
+    .diagram-title { font-size: 20px; line-height: 1.35; font-weight: 900; color: #0f2a44; margin-bottom: 18px; }
     .flow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .box { padding: 18px; border-radius: 14px; border: 1px solid #d9e2ec; background: #f8fafc; }
-    .box strong { display: block; color: #0f2a44; margin-bottom: 6px; font-size: 17px; }
+    .box { padding: 18px; border-radius: 14px; border: 1px solid #d9e2ec; background: #f8fafc; font-size: 17px; line-height: 1.5; }
+    .box .box-title { display: block; color: #0f2a44; margin-bottom: 6px; font-size: 17px; line-height: 1.3; font-weight: 900; }
     .blue { background: #e5eefa; }
     .orange { background: #ffe0c2; }
     .green { background: #e8f5ed; }
@@ -67,9 +70,9 @@
     .cta h2 { color: white; margin-top: 0; }
     .cta p, .cta li { color: rgba(255,255,255,0.92); }
     .button { display: inline-block; background: #f6a51a; color: black; font-weight: bold; padding: 16px 22px; text-decoration: none; border-radius: 8px; font-size: 18px; margin-top: 8px; }
-    .sources { font-size: 16px; color: #475569; }
-    .sources li { font-size: 16px; }
-    @media (max-width: 768px) { h1 { font-size: 38px; } h2 { font-size: 28px; } p, li { font-size: 18px; } .flow { grid-template-columns: 1fr; } }
+    .sources { color: #475569; }
+    .sources li { font-size: 19px; }
+    @media (max-width: 768px) { h1 { font-size: 38px; } h2 { font-size: 28px; } h3 { font-size: 22px; } p, li, .intro { font-size: 18px; } .flow { grid-template-columns: 1fr; } }
   </style>
 </head>
 
@@ -85,7 +88,7 @@
 
   <p>But despite all of that, payroll still feels stressful. Hiring feels risky. Equipment purchases create hesitation. A delayed customer draw suddenly creates operational pressure.</p>
 
-  <p>This is one of the biggest hidden <strong>construction cash flow</strong> problems inside growing contractor businesses.</p>
+  <p>This is one of the biggest hidden construction cash flow problems inside growing contractor businesses.</p>
 
   <p>The issue is often not profitability alone.</p>
 
@@ -93,7 +96,7 @@
 
   <h2>What Is Construction Cash Flow?</h2>
 
-  <p><strong>Construction cash flow</strong> is the movement of money in and out of your construction business over time.</p>
+  <p>Construction cash flow is the movement of money in and out of your construction business over time.</p>
 
   <p>It includes incoming customer payments, payroll, supplier invoices, subcontractor costs, taxes, equipment costs, materials, and overhead.</p>
 
@@ -113,19 +116,19 @@
 
   <p>At the same time, receivables are often uncertain. A customer draw may be delayed. A holdback may not release on time. A project approval may take longer than expected.</p>
 
-  <p>This creates what many contractors experience as the <strong>visibility gap</strong>.</p>
+  <p>This creates what many contractors experience as the visibility gap.</p>
 
   <div class="note">
-    <p><strong>Operational pressure often starts before it shows up financially.</strong> Your bank account may tell you what cash exists today, but it does not tell you what pressure is coming next.</p>
+    <p>Operational pressure often starts before it shows up financially. Your bank account may tell you what cash exists today, but it does not tell you what pressure is coming next.</p>
   </div>
 
   <div class="diagram" role="img" aria-label="Diagram showing why a contractor bank balance can look healthy while future cash pressure is building">
     <div class="diagram-title">Infographic: Why Contractors Misread Construction Cash Flow</div>
     <div class="flow">
-      <div class="box blue"><strong>Today’s Bank Balance</strong>$180,000 looks stable right now.</div>
-      <div class="box orange"><strong>Upcoming Cash Obligations</strong>Payroll, suppliers, fuel, materials, equipment, taxes.</div>
-      <div class="box risk"><strong>Uncertain Receivables</strong>Delayed draws, holdbacks, slow payment, approval delays.</div>
-      <div class="box green"><strong>Actual Cash Position</strong>The business feels stable today, but future pressure is already building.</div>
+      <div class="box blue"><span class="box-title">Today’s Bank Balance</span>$180,000 looks stable right now.</div>
+      <div class="box orange"><span class="box-title">Upcoming Cash Obligations</span>Payroll, suppliers, fuel, materials, equipment, taxes.</div>
+      <div class="box risk"><span class="box-title">Uncertain Receivables</span>Delayed draws, holdbacks, slow payment, approval delays.</div>
+      <div class="box green"><span class="box-title">Actual Cash Position</span>The business feels stable today, but future pressure is already building.</div>
     </div>
   </div>
 
@@ -159,7 +162,7 @@
 
   <p>Meanwhile, payroll still needed to be covered every week.</p>
 
-  <p>This is where many growing construction companies begin feeling what I’d call <strong>timing gap pressure</strong>.</p>
+  <p>This is where many growing construction companies begin feeling what I’d call timing gap pressure.</p>
 
   <p>The business is still profitable.</p>
 
@@ -230,12 +233,12 @@
   <div class="diagram" role="img" aria-label="Diagram showing what contractors should track weekly for construction cash flow visibility">
     <div class="diagram-title">Infographic: What Contractors Should Track Weekly</div>
     <div class="flow">
-      <div class="box blue"><strong>Receivables Timing</strong>Who owes you money and when is it realistically coming?</div>
-      <div class="box green"><strong>Upcoming Payroll</strong>What payroll is guaranteed in the next two to four weeks?</div>
-      <div class="box orange"><strong>Project Exposure</strong>Which jobs require cash before they produce cash?</div>
-      <div class="box risk"><strong>Burn Rate</strong>How much does the business need to keep running?</div>
-      <div class="box blue"><strong>Supplier Obligations</strong>What vendor bills are due before receivables land?</div>
-      <div class="box green"><strong>13-Week Cash View</strong>Where does cash get tight before it becomes urgent?</div>
+      <div class="box blue"><span class="box-title">Receivables Timing</span>Who owes you money and when is it realistically coming?</div>
+      <div class="box green"><span class="box-title">Upcoming Payroll</span>What payroll is guaranteed in the next two to four weeks?</div>
+      <div class="box orange"><span class="box-title">Project Exposure</span>Which jobs require cash before they produce cash?</div>
+      <div class="box risk"><span class="box-title">Burn Rate</span>How much does the business need to keep running?</div>
+      <div class="box blue"><span class="box-title">Supplier Obligations</span>What vendor bills are due before receivables land?</div>
+      <div class="box green"><span class="box-title">13-Week Cash View</span>Where does cash get tight before it becomes urgent?</div>
     </div>
   </div>
 

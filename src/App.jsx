@@ -373,9 +373,11 @@ function FounderSection() {
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
         <div>
           <p className="mb-4 text-sm font-black uppercase tracking-[0.25em] text-[#1399C9]">Built with you</p>
-          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">Built and run with you, not handed off.</h2>
-          <p className="mt-6 text-xl leading-relaxed text-slate-700">This isn’t a report you get and forget. We work through your cash with you, install the weekly rhythm, and help you stay ahead of problems before they hit.</p>
-          <p className="mt-5 text-lg leading-relaxed text-slate-700">The value isn’t just seeing the numbers. It’s knowing what’s coming and staying in control of it.</p>
+          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#0F2A44] md:text-5xl">Built and implemented alongside your team.</h2>
+          <p className="mt-6 text-xl leading-relaxed text-slate-700">We work through the system with you, helping you build better visibility, stronger operating rhythms, and more confidence around growth decisions.</p>
+          <p className="mt-5 text-lg leading-relaxed text-slate-700">As construction businesses grow, complexity increases: more payroll, more projects, more moving cash, and more exposure.</p>
+          <p className="mt-5 text-lg leading-relaxed text-slate-700">The goal is to help you grow with more clarity, less reactive pressure, and stronger control as the business scales.</p>
+          <p className="mt-5 text-lg font-bold leading-relaxed text-[#0F2A44]">Most construction owners are not building toward more stress. They are building toward stability, sustainable growth, and more freedom over time.</p>
           <p className="mt-5 text-lg font-bold leading-relaxed text-[#0F2A44]">Heather Nickel, founder and operator of Cash Control System.</p>
         </div>
         <div className="rounded-2xl bg-white p-4 shadow-sm">
@@ -399,9 +401,9 @@ function FAQAndCTA() {
       <div id="book" className="bg-[#0F2A44] px-5 py-12 text-white md:px-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
           <div>
-            <h2 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">If cash visibility feels unclear, start here.</h2>
+            <h2 className="text-4xl font-black leading-tight tracking-tight md:text-5xl">Want better visibility as the business grows?</h2>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-white/85">
-              In 15 minutes, we’ll look at your burn rate, where timing pressure may be building, and where decisions are getting risky. This is not a forecast build. It is a clear look at what is actually happening and where things can break.
+              In 15 minutes, we’ll look at your current burn rate, timing pressure, and where growth may be creating unnecessary cash exposure. The goal is simple: help you make clearer decisions with better forward visibility.
             </p>
           </div>
           <CTAButton>Apply for a Cash Review</CTAButton>
